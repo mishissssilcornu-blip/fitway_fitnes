@@ -1,1 +1,221 @@
+/* Глобальне скидання та підготовка до адаптивності */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
+/* Налаштування сторінки */
+body {
+    background-color: #0a0a0a; /* Глибокий темний фон */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px; /* Безпечний відступ від країв екрана на смартфонах */
+}
+
+/* Контейнер форми — повністю гумовий та адаптивний */
+.registration-container {
+    width: 100%;
+    max-width: 400px; /* Ідеальна ширина форми на десктопі */
+    background-color: #121212; /* Картка форми */
+    padding: 30px 20px; /* Компактні падінги для мобілок */
+    border-radius: 16px; /* Більш сучасне скруглення */
+    border: 2px solid #ccff00; /* Тонша неонова лінія виглядає набагато акуратніше */
+    box-shadow: 0 0 25px rgba(204, 255, 0, 0.12), 0 15px 40px rgba(0, 0, 0, 0.6);
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Збільшуємо відступи картки на планшетах та комп'ютерах */
+@media (min-width: 480px) {
+    .registration-container {
+        padding: 40px 35px;
+        border-radius: 20px;
+    }
+}
+
+/* Блок "01 ЕТАП" */
+.step-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8c8c8c;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.step-label span {
+    color: #ccff00;
+    border-bottom: 2px solid #ccff00;
+    padding-bottom: 2px;
+    font-weight: 700;
+}
+
+/* Головний заголовок */
+h1 {
+    font-size: 26px; /* Адаптивний розмір для малих екранів */
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Збільшуємо шрифт h1 для більших дисплеїв */
+@media (min-width: 480px) {
+    h1 {
+        font-size: 32px;
+    }
+}
+
+/* Підзаголовок */
+p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+/* Блоки полів введення */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    color: #8c8c8c;
+}
+
+/* Обгортка для іконки, інпуту та ока */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Іконки ліворуч всередині полів */
+.input-wrapper .icon {
+    position: absolute;
+    left: 16px;
+    color: #555555;
+    font-size: 16px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Текстові поля */
+input {
+    width: 100%;
+    background-color: #171717;
+    border: 1px solid #262626;
+    color: #ffffff;
+    padding: 14px 16px 14px 46px; /* Великий відступ зліва для іконки */
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Окреме налаштування для пароля, щоб текст не перекривався кнопкою ока */
+input[type="password"] {
+    padding-right: 46px;
+}
+
+input:focus {
+    border-color: #ccff00;
+    box-shadow: 0 0 10px rgba(204, 255, 0, 0.2);
+}
+
+/* Кнопка показу паролю (Око) — тепер стоїть ідеально по центру */
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #555555;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+    color: #ccff00;
+}
+
+/* Головна кнопка "ПРОДОВЖИТИ" */
+button[type="submit"] {
+    width: 100%;
+    background-color: #ccff00;
+    color: #000000;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #ddff33;
+    box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+}
+
+/* Ефект м'якого кліку на кнопку */
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* Анімація стрілочки на кнопці */
+button[type="submit"] span {
+    transition: transform 0.2s ease;
+}
+
+button[type="submit"]:hover span {
+    transform: translateX(4px);
+}
+
+/* Нижня частина форми (Увійти) */
+.footer-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+    color: #666666;
+}
+
+.footer-link a {
+    color: #ccff00;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 6px;
+    transition: color 0.2s ease;
+}
+
+.footer-link a:hover {
+    color: #ddff33;
+    text-decoration: underline;
+}

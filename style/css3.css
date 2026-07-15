@@ -1,0 +1,213 @@
+/* ==========================================================================
+   7. СТИЛІ ДЛЯ СТОРІНОК РЕЄСТРАЦІЇ (INDEX / INDEX2)
+   ========================================================================== */
+
+/* Оновлений body для правильного центрування форми по центру */
+body {
+    justify-content: center;
+    align-items: center;
+    padding: 20px 16px; /* Захисна зона для мобільних екранів */
+}
+
+/* Контейнер форми реєстрації */
+.registration-container {
+    width: 100%;
+    max-width: 400px; /* Оптимальний мобільний та десктопний розмір */
+    background-color: #121212; /* Твій картковий фон */
+    border: 1px solid #1a1a1a;
+    padding: 35px 24px;
+    transition: padding 0.3s ease;
+}
+
+/* Кіберпанк-зріз як у твоїх .stat-card та .chart-box */
+.registration-container.cyber-cut {
+    clip-path: polygon(
+        15px 0%, 
+        100% 0%, 
+        100% calc(100% - 15px), 
+        calc(100% - 15px) 100%, 
+        0% 100%
+    );
+}
+
+/* Збільшені падінги для планшетів та ПК */
+@media (min-width: 480px) {
+    .registration-container {
+        padding: 45px 35px;
+    }
+}
+
+/* Стилізація кроків (02 ЕТАП) */
+.step-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8c8c8c;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.step-label span {
+    color: #ccff00;
+    border-bottom: 2px solid #ccff00;
+    padding-bottom: 2px;
+    font-weight: 700;
+}
+
+.registration-container h1 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (min-width: 480px) {
+    .registration-container h1 {
+        font-size: 32px;
+    }
+}
+
+.subtitle {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Поля вводу */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    color: #8c8c8c;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-wrapper .icon {
+    position: absolute;
+    left: 16px;
+    color: #555555;
+    font-size: 16px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Текстові поля та календарі */
+input, select {
+    width: 100%;
+    background-color: #171717;
+    border: 1px solid #262626;
+    color: #ffffff;
+    padding: 14px 16px 14px 46px; /* Залишаємо відступ зліва під іконку */
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease;
+}
+
+input:focus, select:focus {
+    border-color: #ccff00;
+}
+
+/* Інверсія іконки календаря для темної теми */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Кастомна стрілочка випадаючого списку */
+select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23555555' viewBox='0 0 16 16'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+/* Вага та зріст (Адаптивний рядок) */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Якщо екран замалий, розгортаємо вагу та зріст один під одного */
+@media (max-width: 360px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* Контейнер кнопок */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Кнопка "Назад" */
+.btn-secondary {
+    flex: 1;
+    background-color: transparent;
+    color: #8c8c8c;
+    border: 1px solid #262626;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #171717;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+/* Кнопка "Створити акаунт" */
+.btn-submit {
+    flex: 2; /* Кнопка підтвердження більша */
+    background-color: #ccff00;
+    color: #000000;
+    border: none;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: #ddff33;
+    box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
