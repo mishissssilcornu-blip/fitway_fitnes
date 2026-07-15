@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitway — Головна панель</title>
+    <link rel="stylesheet" href="style/dashboard.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="logo">FIT<span>NESS</span></div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">🏠</span> ГОЛОВНА
+                </a>
+                <a href="pedometer.html" class="nav-item">
+                    <span class="nav-icon">👟</span> КРОКОМІР
+                </a>
+               
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">👤</span> ПРОФІЛЬ
+                </a>
+            </nav>
+        </div>
+
+        <div class="motivation-box">
+            <div class="motivation-title">📈 МОТИВАЦІЯ ДНЯ</div>
+            <p class="motivation-text">Не зупиняйся, поки не пишатимешся собою!</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="header">
+            <h1>ГОЛОВНА</h1>
+            <div class="user-profile">
+                <div class="notification-icon">🔔</div>
+                <div class="avatar">👤</div>
+                <div class="user-info">
+                    <div class="name">ЗАВАНТАЖЕННЯ...</div>
+                    <div class="level">Рівень 12</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header"><span class="stat-icon">👟</span> КРОКИ</div>
+                <div class="stat-main">
+                    <div class="stat-value">0</div>
+                    <div class="stat-target">/ 10 000</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header"><span class="stat-icon">🔥</span> КАЛОРІЇ</div>
+                <div class="stat-main">
+                    <div class="stat-value">0</div>
+                    <div class="stat-target">/ 0 ккал</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-card water-card-interactive">
+                <div class="stat-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <span><span class="stat-icon">💧</span> ВОДА</span>
+                    <button id="quick-add-water" style="background: #ccff00; color: #000; border: none; width: 24px; height: 24px; border-radius: 50%; font-weight: 900; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: transform 0.1s;">+</button>
+                </div>
+                <div class="stat-main" style="margin-top: 5px;">
+                    <div class="stat-value">0.0</div>
+                    <div class="stat-target">/ 0.0 л</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header"><span class="stat-icon">📍</span> ДИСТАНЦІЯ</div>
+                <div class="stat-main">
+                    <div class="stat-value">0.00</div>
+                    <div class="stat-target">/ 10 км</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analytics-section">
+            <div class="chart-box">
+                <div class="chart-header">
+                    <div class="chart-title">ПРОГРЕС СПАЛЮВАННЯ КАЛОРІЙ</div>
+                    <select class="chart-filter">
+                        <option>7 ДНІВ</option>
+                        <option>30 ДНІВ</option>
+                    </select>
+                </div>
+                <div class="mock-chart">
+                    <div class="mock-chart-line"></div>
+                </div>
+            </div>
+
+            <div class="chart-box">
+                <div class="chart-header">
+                    <div class="chart-title">СТАТИСТИКА</div>
+                </div>
+                <div class="detailed-stats-list">
+                    <div class="detailed-item"><span>👟 Кроки</span><span>0 кроків</span></div>
+                    <div class="detailed-item"><span>🔥 Калорії</span><span>0 ккал</span></div>
+                    <div class="detailed-item"><span>💧 Вода</span><span>0 л</span></div>
+                    <div class="detailed-item"><span>📍 Дистанція</span><span>0.00 км</span></div>
+                    <div class="detailed-item"><span>⏱️ Активні хвилини</span><span>0 хв</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="daily-activity">
+            <div class="chart-title">АКТИВНІСТЬ ЗА ДЕНЬ</div>
+            <div class="bar-chart">
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+                <div class="bar" style="height: 0%;"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

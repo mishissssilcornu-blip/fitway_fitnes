@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitway — Крокомір</title>
+    <link rel="stylesheet" href="style/dashboard.css">
+    <link rel="stylesheet" href="style/pedometer.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div>
+            <div class="logo">FIT<span>NESS</span></div>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">🏠</span> ГОЛОВНА
+                </a>
+                <a href="pedometer.html" class="nav-item active">
+                    <span class="nav-icon">👟</span> КРОКОМІР
+                </a>
+                
+                <a href="profile.html" class="nav-item">
+                    <span class="nav-icon">👤</span> ПРОФІЛЬ
+                </a>
+            </nav>
+        </div>
+
+        <div class="motivation-box">
+            <div class="motivation-title">📈 МОТИВАЦІЯ ДНЯ</div>
+            <p class="motivation-text">Кожен крок наближає тебе до мети. Рухайся вперед!</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>КРОКОМІР ТА ТРЕНУВАННЯ</h1>
+            <div class="user-profile">
+                <div class="avatar">👤</div>
+                <div class="user-info">
+                    <div class="name">ЗАВАНТАЖЕННЯ...</div>
+                    <div class="level">Рівень 12</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="pedometer-container">
+            
+            <div class="pedometer-card setup-card">
+                <h2>НАЛАШТУВАННЯ ЦІЛІ</h2>
+                <div class="setup-group">
+                    <label for="target-type">Оберіть тип цілі:</label>
+                    <select id="target-type" class="pedometer-select">
+                        <option value="time">⏱️ За часом (хвилини)</option>
+                        <option value="distance">📍 За відстанню (км)</option>
+                    </select>
+                </div>
+                
+                <div class="setup-group">
+                    <label for="target-value">Вкажіть значення:</label>
+                    <input type="number" id="target-value" class="pedometer-input" placeholder="Введіть час (хвилин)..." min="1">
+                </div>
+
+                <div class="pedometer-actions">
+                    <button id="btn-pedometer-start" class="btn-start">▶ ЗАПУСТИТИ ДАТЧИК</button>
+                    <button id="btn-pedometer-stop" class="btn-stop" disabled>🛑 ЗАВЕРШИТИ</button>
+                </div>
+            </div>
+
+            <div class="pedometer-card live-monitor-card">
+                <div class="monitor-header">
+                    <h2>ОТСЛІДКУВАННЯ АКТИВНОСТІ</h2>
+                    <div class="status-indicator">
+                        <span id="status-dot"></span>
+                        <span id="status-text">Очікування</span>
+                    </div>
+                </div>
+
+                <div class="live-stats-grid">
+                    <div class="live-stat-item">
+                        <span class="live-label">Пройдено кроків</span>
+                        <span id="workout-steps" class="live-value text-neon">0</span>
+                    </div>
+                    <div class="live-stat-item">
+                        <span class="live-label">Час у русі</span>
+                        <span id="workout-time" class="live-value">00:00</span>
+                    </div>
+                    <div class="live-stat-item">
+                        <span class="live-label">Поточна відстань</span>
+                        <span id="workout-distance" class="live-value">0.00</span> <span class="unit">км</span>
+                    </div>
+                    <div class="live-stat-item">
+                        <span class="live-label">Спалено калорій</span>
+                        <span id="workout-calories" class="live-value">0</span> <span class="unit">ккал</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/pedometer.js"></script>
+</body>
+</html>

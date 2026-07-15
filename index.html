@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Створи свій акаунт — Крок 1</title>
+    <link rel="stylesheet" href="style/css1.css">
+</head>
+<body>
+
+    <div class="registration-container">
+        <div class="step-label">
+            <span>01 ЕТАП</span>
+        </div>
+
+        <h1>СТВОРИ <br> СВІЙ АКАУНТ</h1>
+        <p>Почни свій шлях до найкращої версії себе</p>
+
+        <form id="form-step-1">
+            <div class="form-group">
+                <label for="username">НІКНЕЙМ</label>
+                <div class="input-wrapper">
+                    <span class="icon">👤</span>
+                    <input type="text" id="username" placeholder="Введи свій нікнейм" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">ПАРОЛЬ</label>
+                <div class="input-wrapper">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="password" placeholder="Введи пароль" required>
+                    <button type="button" class="toggle-password" aria-label="Показати пароль">👁️</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <div class="input-wrapper">
+                    <span class="icon">✉️</span>
+                    <input type="email" id="email" placeholder="Введи свою пошту" required>
+                </div>
+            </div>
+
+            <button type="submit">
+                ПРОДОВЖИТИ <span>→</span>
+            </button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
